@@ -102,7 +102,7 @@ bot.onText(/\/start/, (msg) => {
     bot.sendMessage(chatId, 'Started, chat ID: ' + chatId);
 });
 
-bot.onText(/^\/timezone(@sticker_time_bot)?(\s+([^\s]+))?$/, (msg, match) => {
+bot.onText(/^\/timezone(@pkaclockbot)?(\s+([^\s]+))?$/, (msg, match) => {
     const chatId = msg.chat.id;
     if (match[3]) {
         if (moment.tz.zone(match[3])) {
@@ -123,7 +123,7 @@ bot.onText(/^\/timezone(@sticker_time_bot)?(\s+([^\s]+))?$/, (msg, match) => {
     }
 });
 
-bot.onText(/^\/autodelete(@sticker_time_bot)?(\s+([^\s]+))?$/, (msg, match) => {
+bot.onText(/^\/autodelete(@pkaclockbot)?(\s+([^\s]+))?$/, (msg, match) => {
     const chatId = msg.chat.id;
     let index = data.chatids.indexOf(chatId);
     if (index <= -1) {
@@ -153,7 +153,7 @@ bot.onText(/^\/autodelete(@sticker_time_bot)?(\s+([^\s]+))?$/, (msg, match) => {
     }
 });
 
-bot.onText(/^\/sleeptime(@sticker_time_bot)?(\s+([^\s]+))?$/, (msg, match) => {
+bot.onText(/^\/sleeptime(@pkaclockbot)?(\s+([^\s]+))?$/, (msg, match) => {
     const chatId = msg.chat.id;
     // bot.sendMessage(chatId, match[0]+'  '+match[1]+'  '+match[2]+'  '+match[3])
     if (match[3]) {
@@ -175,7 +175,7 @@ bot.onText(/^\/sleeptime(@sticker_time_bot)?(\s+([^\s]+))?$/, (msg, match) => {
     }
 });
 
-bot.onText(/^\/waketime(@sticker_time_bot)?(\s+([^\s]+))?$/, (msg, match) => {
+bot.onText(/^\/waketime(@pkaclockbot)?(\s+([^\s]+))?$/, (msg, match) => {
     const chatId = msg.chat.id;
     if (match[3]) {
         var num = parseInt(match[3], 10);
